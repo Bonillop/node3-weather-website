@@ -22,8 +22,10 @@ weatherForm.addEventListener("submit", e => {
         messageOne.textContent = data.error;
       } else {
         console.log(data);
+        const informacion = "La temperatura es de " + data.forecast.temperature + " °C y la probabilidad de lluvias es de " +
+        data.forecast.precipProbability + "%. " + data.forecast.summary;
         messageOne.textContent = data.location;
-        messageTwo.textContent = data.forecast.summary;
+        messageTwo.textContent = informacion;
       }
     });
   });
