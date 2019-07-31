@@ -32,7 +32,7 @@ app.get("", (req, res) => {
 app.get("/help", (req, res) => {
   res.render("help", {
     title: "Help",
-    message: "Help message",
+    message: "Mensaje de ayuda",
     name: "Pepe"
   });
 });

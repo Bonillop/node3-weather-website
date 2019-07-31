@@ -1,5 +1,3 @@
-console.log("Pepe is working!");
-
 const weatherForm = document.querySelector("form");
 const searchElement = document.querySelector("input");
 
@@ -18,11 +16,11 @@ weatherForm.addEventListener("submit", e => {
   fetch("/weather?address=" + location).then(response => {
     response.json().then(data => {
       if (data.error) {
-        console.log(data.error);
         messageOne.textContent = data.error;
       } else {
-        console.log(data);
-        const informacion = "La temperatura es de " + data.forecast.temperature + " °C y la probabilidad de lluvias es de " +
+        const informacion = "La temperatura es de " + data.forecast.temperature + " °C, con una máxima de " +
+        data.forecast.temperatureHigh + " °C, y una mínima de " + data.forecast.temperatureLow + " °C. " +
+        "La probabilidad de lluvias es de " +
         data.forecast.precipProbability + "%. " + data.forecast.summary;
         messageOne.textContent = data.location;
         messageTwo.textContent = informacion;

@@ -14,11 +14,13 @@ const forecast = (longitude, latitude, callback) => {
     } else if (body.error) {
       callback("Unable to find location", undefined);
     } else {
-      console.log(body);
+      console.log(body.daily.data[0]);
       callback(undefined, {
         temperature: body.currently.temperature,
         precipProbability: body.currently.precipProbability,
-        summary: body.daily.data[0].summary
+        summary: body.daily.data[0].summary,
+        temperatureHigh: body.daily.data[0].temperatureHigh,
+        temperatureLow: body.daily.data[0].temperatureLow
       });
     }
   });
