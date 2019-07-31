@@ -25,7 +25,7 @@ app.use(express.static(publicDirectoryPath));
 app.get("", (req, res) => {
   res.render("index", {
     title: "Weather App",
-    name: "Pepe"
+    name: "Pablo Bonillo"
   });
 });
 
@@ -33,14 +33,14 @@ app.get("/help", (req, res) => {
   res.render("help", {
     title: "Help",
     message: "Mensaje de ayuda",
-    name: "Pepe"
+    name: "Pablo Bonillo"
   });
 });
 
 app.get("/about", (req, res) => {
   res.render("about", {
     title: "About me",
-    name: "Pepe"
+    name: "Pablo Bonillo"
   });
 });
 
@@ -84,7 +84,7 @@ app.get("/help/*", (req, res) => {
   res.render("404", {
     title: "404",
     error: "Help article not found",
-    name: "Pepe"
+    name: "Pablo Bonillo"
   });
 });
 
@@ -92,7 +92,7 @@ app.get("*", (req, res) => {
   res.render("404", {
     title: "404",
     error: "Page not found",
-    name: "Pepe"
+    name: "Pablo Bonillo"
   });
 });
 
